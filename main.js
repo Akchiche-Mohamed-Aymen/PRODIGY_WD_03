@@ -63,6 +63,7 @@ buttons.forEach(button =>{
         
             if(winner){
                 buttons.forEach(but =>but.classList.add('disabled'))
+                document.querySelector('.winResult span').innerHTML = winner === 'X'?user1.value : user2.value
                 document.querySelector('.winResult').classList.add('active')
                 console.log(document.querySelector('.winResult'))
                 reset(winner)    
@@ -75,6 +76,7 @@ buttons.forEach(button =>{
 btn.onclick = ()=>{
     if(user1.value!== '' && user2.value !== ''){
         updateSpan()
+        document.querySelector('h2').style.display ='block'
         div.style.display = 'flex'
         btn.parentElement.style.display = 'none'
     }
